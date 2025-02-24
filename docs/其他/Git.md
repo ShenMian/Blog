@@ -158,7 +158,7 @@ git stash pop # 恢复贮藏
 
 ## 清空仓库
 
-以下代码用于清空仓库指定分支的全部历史记录, 执行操作后提交历史将会**永久丢失**.
+下面代码用于清空 main 分支的所有提交历史.
 
 ```sh
 git checkout --orphan empty        || exit 1
@@ -170,6 +170,8 @@ git checkout main                  || exit 1
 git branch -D empty
 git pull origin main --allow-unrelated-histories
 ```
+
+在确认执行成功后, 可以执行 `git gc` 来清除无用的历史, 此举将导致之前的提交历史**完全丢失**.
 
 ## 常见错误
 
